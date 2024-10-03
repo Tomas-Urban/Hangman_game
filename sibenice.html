@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset='utf-8'>
+    <title>Šibenice</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='sibenice.css'>
+</head>
+<body>
+    <header>
+        <h1>Šibenice</h1>
+    </header>
+    <main>
+        <div id="gameOver">
+            <span>game over!</span>
+        </div>
+        <div id="container">
+            <div class="formular">
+                <form id="secretForm">
+                    <label for="secretInput">Zadejte tajenku (max. 50 znaků)</label>
+                    <input id="secretInput" type="password" pattern="[A-Za-záéěíóúůüýžščřďťň\s]+" maxlength="50" autocomplete="off">
+                    <div id="formButtons">
+                        <button id="secretInputSubmit" type="submit">Zadat Tajenku</button>
+                        <button id = "showSecret"> Odkrýt Tajenku</button>
+                        <button id = "newGame"> Nová Hra</button>
+                    </div>
+                    
+                </form>
+            <!--    <form id="guessedLetterForm">
+                    <label for="guessedLetterInput">Zadej hádané písmeno</label>
+                    <input id="guessedLetterInput" type="text" pattern="[A-Za-z]{1}" title="Prosím, zadejte pouze jedno písmeno.">
+                    <input id="guessedLetterInputSubmit" type="submit">
+                </form>
+            -->    
+                <section class="keybord">
+                    <div class="keybordRow">
+                        <div class="key" id="q">Q</div>
+                        <div class="key" id="w">W</div>
+                        <div class="key" id="e">E</div>
+                        <div class="key" id="r">R</div>
+                        <div class="key" id="t">T</div>
+                        <div class="key" id="z">Z</div>
+                        <div class="key" id="u">U</div>
+                        <div class="key" id="i">I</div>
+                        <div class="key" id="o">O</div>
+                        <div class="key" id="p">P</div>
+                    </div>
+                    <div class="keybordRow">
+                        <div class="key" id="a">A</div>
+                        <div class="key" id="s">S</div>
+                        <div class="key" id="d">D</div>
+                        <div class="key" id="f">F</div>
+                        <div class="key" id="g">G</div>
+                        <div class="key" id="h">H</div>
+                        <div class="key" id="j">J</div>
+                        <div class="key" id="k">K</div>
+                        <div class="key" id="l">L</div>
+                    </div>
+                    <div class="keybordRow">
+                        <div class="key" id="y">Y</div>
+                        <div class="key" id="x">X</div>
+                        <div class="key" id="c">C</div>
+                        <div class="key" id="v">V</div>
+                        <div class="key" id="b">B</div>
+                        <div class="key" id="n">N</div>
+                        <div class="key" id="m">M</div>
+                    </div>
+                </section>
+            </div>
+            <div id="sibenice">
+                <canvas width="400" height="300" id="platno"></canvas>
+            </div>
+        </div>
+        <div id="secretDiv">
+            <div id="secretContainer">
+                <!--<div class="letterBox" id="1"></div>-->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="creatorDiv"><p>&copy; Vytvořil Tomáš Urban</p></div>
+        <div id="webhostingDiv"><p>Webhosting: <a href="https://www.endora.cz/" target="_blank">endora.cz</a></p></div>
+    </footer>
+    <script src='sibenice.js'></script>
+    <script src='functions.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            secretLoad();
+            //guessedLetterLoad();
+        });
+    </script>
+</body>
+</html>
